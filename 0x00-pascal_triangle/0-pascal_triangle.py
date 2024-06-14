@@ -29,6 +29,6 @@ def pascal_triangle(n):
                 # print(results_array[line][row])
                 # print("")
             else:
-                results[line][i] = results[line - 1][i - 1] + results[line-1][i]
+                results[line][i] = results[line-1][i - 1] + results[line-1][i]
     # print_pascal(results_array)
     return results
