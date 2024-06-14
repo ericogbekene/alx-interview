@@ -21,7 +21,7 @@ def pascal_triangle(n):
         return []
 
     results = [[0 for x in range(n)]
-                     for y in range(n)]
+               for y in range(n)]
     for line in range(0, n):
         for row in range(0, line + 1):
             if row == 0 or row == line:
@@ -29,6 +29,6 @@ def pascal_triangle(n):
                 # print(results_array[line][row])
                 # print("")
             else:
-                results[line][row] = results[line-1][row] + results[line-1][row + 1]
+                results[line][row] = results[line-1][row - 1] + results[line-1][row]
     # print_pascal(results_array)
     return results
