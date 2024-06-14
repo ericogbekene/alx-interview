@@ -4,15 +4,6 @@ module to print pascal triangle
 """
 
 
-def print_pascal(list):
-    """
-    to print the list out
-    """
-    for line in list:
-        for index in line:
-            print(index)
-
-
 def pascal_triangle(n):
     """
     this funtion will print the pascal triangle, n lines
@@ -30,5 +21,4 @@ def pascal_triangle(n):
                 # print("")
             else:
                 results[line][i] = results[line-1][i - 1] + results[line-1][i]
-    # print_pascal(results_array)
     return results
