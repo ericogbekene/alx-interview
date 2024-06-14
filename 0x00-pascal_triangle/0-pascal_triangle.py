@@ -23,12 +23,12 @@ def pascal_triangle(n):
     results = [[0 for x in range(n)]
                for y in range(n)]
     for line in range(0, n):
-        for row in range(0, line + 1):
-            if row == 0 or row == line:
-                results[line][row] = 1
+        for i in range(0, line):
+            if i == 0 or i == line:
+                results[line][i] = 1
                 # print(results_array[line][row])
                 # print("")
             else:
-                results[line][row] = results[line-1][row - 1] + results[line-1][row]
+                results[line][i] = results[line-1][i - 1] + results[line-1][i]
     # print_pascal(results_array)
     return results
