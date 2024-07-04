@@ -6,6 +6,9 @@ Solving the Nqueens problem
 import sys
 
 def solve_n_queens(n:int) -> bool:
+    """
+    Trying to solve N queens algo
+    """
     args: list = sys.argv
 
     if len(args) < 2:
@@ -18,7 +21,9 @@ def solve_n_queens(n:int) -> bool:
     n = int(args[1])
 
     def is_safe(board:list, row: int, col: int):
-        # Check if a queen can be placed on board[row][col]
+        """
+        Check if a queen can be placed on board[row][col]
+        """
         
         # Check this row on left side
         for i in range(col):
@@ -38,6 +43,9 @@ def solve_n_queens(n:int) -> bool:
         return True
 
     def solve(board: list, col):
+        """
+        Main solve algorithm
+        """
         # Base case: If all queens are placed, return true
         if col >= n:
             return True
