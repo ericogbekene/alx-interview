@@ -5,8 +5,8 @@ Solving the Nqueens problem
 
 import sys
 
-def solve_n_queens(n):
-    args = sys.argv
+def solve_n_queens(n:int) -> bool:
+    args: list = sys.argv
 
     if len(args) < 2:
         print("Usage: nqueens N")
@@ -17,7 +17,7 @@ def solve_n_queens(n):
 
     n = int(args[1])
 
-    def is_safe(board, row, col):
+    def is_safe(board:list, row: int, col: int):
         # Check if a queen can be placed on board[row][col]
         
         # Check this row on left side
@@ -37,7 +37,7 @@ def solve_n_queens(n):
         
         return True
 
-    def solve(board, col):
+    def solve(board: list, col):
         # Base case: If all queens are placed, return true
         if col >= n:
             return True
@@ -76,7 +76,6 @@ def solve_n_queens(n):
     return True
 
 if __name__ == '__main__':
-    n = sys.argv[1]
-    n = int(n)
+    n: int = int(sys.argv[1])
     #solve(n)
     solve_n_queens(n)
