@@ -4,15 +4,18 @@ Maria and Ben Playing a game of Prime Numbers.
 Who Wins
 """
 
+
 def isWinner(x, nums):
     """
     checks the winner of x rounds
     of Prime Game
-    
+
     Args: x, nums
     Returns: True if Maria wins, False if Ben wins
     """
-    
+    if x <= 0 or not nums:
+        return None
+
     def sieve_prime(n):
         """
         helper function to get prime number
@@ -37,7 +40,7 @@ def isWinner(x, nums):
 
         primes_count = sum(prime_nums[2:n+1])
         return "Maria" if primes_count % 2 != 0 else "Ben"
-    
+
     '''
     def play_game(n):
         primes = sieve_prime(n)
@@ -52,8 +55,8 @@ def isWinner(x, nums):
             else:
                 return player
             player = "Ben" if player == "Maria" else "Maria"
-    
-    
+
+
     def play_game(n):
         prime_num = sieve_prime(n)
         turn = 0  # 0 for Maria, 1 for Ben
@@ -67,7 +70,7 @@ def isWinner(x, nums):
 
     maria_wins = 0
     ben_wins = 0
-    
+
     for n in nums:
         winner = play_game(n)
         if winner == "Maria":
