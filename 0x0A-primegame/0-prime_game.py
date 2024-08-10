@@ -24,7 +24,21 @@ def isWinner(x, nums):
                 for j in range(i*i, n+1, i):
                     primes[j] = False
         return primes
+
+    max_num = max(nums)
+    prime_nums = sieve_prime(max_num)
+
+    def play_game(n):
+        """
+        find the winner
+        """
+        if n < 2:
+            return "Ben"
+
+        primes_count = sum(prime_nums[2:n+1])
+        return "Maria" if primes_count % 2 != 0 else "Ben"
     
+    '''
     def play_game(n):
         primes = sieve_prime(n)
         player = "Maria"
@@ -38,7 +52,7 @@ def isWinner(x, nums):
             else:
                 return player
             player = "Ben" if player == "Maria" else "Maria"
-    '''
+    
     
     def play_game(n):
         prime_num = sieve_prime(n)
